@@ -1,0 +1,39 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+auto-save = true
+true-color = true
+preview-completion-insert = true
+completion-trigger-len = 1
+auto-format = true
+end-of-line-diagnostics = "hint"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.inline-diagnostics]
+cursor-line="error"
+
+[editor.lsp]
+enable = true
+# display-inlay-hints = true
+display-messages = true
+
+[keys.normal]
+"C-p" = ":open ~/coding/"
+"C-d" = ":open ~/.dotfiles/"
+C-g = [":new", ":insert-output lazygit", ":buffer-close", ":redraw"]
+C-f = [":new", ":insert-output yazi", ":buffer-close", ":redraw"]
+C-r = ":open %sh run %val{filename}"
+
+[editor.statusline]
+left = ["mode","spacer", "version-control"]
+center = []
+right = ["file-base-name", "spinner", "spacer","workspace-diagnostics", "spacer", "position", "file-modification-indicator"]
+separator = "|"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+

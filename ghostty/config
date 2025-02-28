@@ -1,0 +1,33 @@
+theme = catppuccin-mocha
+font-family = JetBrainsMono Nerd Font
+font-size = 12.5
+background-opacity = 1
+
+gtk-titlebar = false
+
+confirm-close-surface = false
+title = "Think Different"
+
+copy-on-select = true 
+resize-overlay = never 
+
+window-width = 100 
+window-height = 30
+window-padding-x = 10, 5
+window-padding-y = 5, 5
+
+window-colorspace = display-p3
+
+
+#keybind = ctrl+shift+j=new_split:down
+#keybind = ctrl+shift+k=new_split:right
+
+#keybind = ctrl+j=goto_split:bottom
+#keybind = ctrl+k=goto_split:top
+#keybind = ctrl+l=goto_split:right
+#keybind = ctrl+h=goto_split:left
+
+#keybind = alt+l=resize_split:right,5
+#keybind = alt+h=resize_split:left,5
+#keybind = alt+j=resize_split:down,5
+#keybind = alt+k=resize_split:up,5

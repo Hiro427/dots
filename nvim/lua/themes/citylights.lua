@@ -1,0 +1,3 @@
+return {
+    "jordanbrauer/citylights.nvim"
+}

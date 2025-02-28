@@ -1,0 +1,178 @@
+# i3 config file (v4)
+
+set $mod Mod4
+
+font pango:monospace 8
+
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
+
+exec --no-startup-id picom 
+
+default_border pixel 2
+#
+client.focused              #89b4fa #89b4fa #89b4fa #89b4fa 
+client.focused_inactive     #89b4fa #89b4fa #89b4fa #89b4fa
+client.unfocused		    #89b4fa #89b4fa #89b4fa #89b4fa 
+client.urgent				#89b4fa #89b4fa #89b4fa #89b4fa 
+client.placeholder			#89b4fa #89b4fa #89b4fa #89b4fa 
+
+
+exec --no-startup-id nm-applet
+
+# Use pactl to adjust volume in PulseAudio.
+# set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+
+# Set the primary display
+exec --no-startup-id xrandr --output eDP-1 --off
+
+# Configure the external monitor
+exec --no-startup-id xrandr --output DP-3 --primary --mode 1920x1080 --pos 1920x0 --rotate normal
+
+# (Optional) Turn off unused outputs
+exec --no-startup-id xrandr --output DP-2 --mode 1680x1050 pos 1680x0 --rotate normal
+
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+exec_always --no-startup-id ~/autotiling/target/release/autotiling &
+# Auto-lock the screen after 10 minutes of inactivity
+# exec --no-startup-id xautolock -time 5 -locker "i3lock" -notify 30 -notifier "notify-send -u critical 'Locking in 30 seconds'"
+
+
+#gaps 
+gaps inner 10 
+gaps outer 5
+
+smart_gaps off
+smart_borders on 
+smart_borders no_gaps 
+hide_edge_borders smart_no_gaps 
+
+
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+tiling_drag modifier titlebar
+
+# kill focused window
+bindsym $mod+w kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in horizontal orientation
+bindsym Mod1+h split h
+
+# split in vertical orientation
+bindsym Mod1+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+Shift+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+# bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+
+#custom scripts/applications
+
+exec_always --no-startup-id sleep 5 && pblaunch
+
+exec_always --no-startup-id nitrogen --restore &
+
+#applications 
+bindsym $mod+p exec xfce4-screenshooter
+# bindsym $mod+Return exec flatpak run org.wezfurlong.wezterm 
+bindsym $mod+Return exec ghostty
+bindsym $mod+b exec flatpak run io.github.zen_browser.zen 
+bindsym $mod+f exec thunar
+
+bindsym Mod1+Shift+w exec ~/.dotfiles/i3/rofi-wifi-menu.sh
+bindsym Mod1+Shift+p exec ~/.dotfiles/rofi/rofi-power-menu.sh
+bindsym $mod+space exec rofi -show drun
+exec --no-startup-id ~/.dotfiles/i3/reverse_scroll.sh
+
+# bindsym $mod+s exec xfce4-settings-manager
+# bindsym $mod+q exec xfce4-session-logout
+# bindsym $mod+s exec ~/coding/projects/scripts/gset.sh
+# bindsym $mod+space exec xfce4-popup-whiskermenu 
+
+# bindsym $mod+space exec ulauncher-toggle
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+
+focus_follows_mouse no
+
+bindsym Ctrl+Shift+L workspace next_on_output
+bindsym Ctrl+Shift+R workspace prev_on_output
+
+bindsym --whole-window button19 workspace prev_on_output
+bindsym --whole-window button17 workspace next_on_output
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
