@@ -115,7 +115,6 @@ export MANGA_DL_DIR="$HOME/Downloads/Manga/"
 export NVIM_LISTEN_ADDRESS=/tmp/nvim.pipe
 export REPO_FPATH="$HOME"/.dotfiles/github/repos.txt
 export PROJ_DIR="$HOME"/coding/projects/
-export TODOIST_API_KEY=d776e803e495890bac2a4966bf351c134d7cde43
 export GHW_SUPPRESS_WARNINGS=1
 export MANGA_TUI_DATA_DIR="$HOME/Downloads/mangatui"
 #eza settings
