@@ -1,5 +1,0 @@
-[[keymaps]]
-on = ["<C-h>"]
-exec = "toggle_hidden"
-desc = "Toggle hidden files"
-
