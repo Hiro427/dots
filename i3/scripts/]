@@ -1,0 +1,7 @@
+#!/bin/env bash
+
+MANGA=$(rclone lsf --dirs-only "Dropbox:/Manga" | wc -l)
+ANIME=$(rclone lsf --dirs-only "Dropbox:/Anime" | wc -l)
+LOCAL_ANIME=$(ls ~/Downloads/Anime/ | wc -l)
+LOCAL_MANGA=$(ls ~/Downloads/Manga/ | wc -l)
+printf "󱜏 %s(%s)  %s(%s)\n" "$ANIME" "$LOCAL_ANIME" "$MANGA" "$LOCAL_MANGA"

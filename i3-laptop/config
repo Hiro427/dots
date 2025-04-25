@@ -1,0 +1,22 @@
+#i3 config file (v4)
+
+include ~/.dotfiles/i3/autostart.conf
+include ~/.dotfiles/i3/opts.conf
+include ~/.dotfiles/i3/keys.conf
+include ~/.dotfiles/i3/vol_br_ctl.conf
+
+bar {
+    font pango:Monospace, FontAwesome 12
+    position bottom
+    height 30
+    status_command i3status-rs ~/.dotfiles/i3-laptop/config.toml
+    colors {
+        separator #a6adc8
+        background #181825
+        statusline #dddddd
+        focused_workspace #313244 #313244 #a6adc8
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace ##11111b #11111b #313244
+    }
+}
+

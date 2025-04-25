@@ -1,0 +1,31 @@
+#i3 config file (v4)
+
+include ~/.dotfiles/i3/autostart.conf
+include ~/.dotfiles/i3/opts.conf
+include ~/.dotfiles/i3/keys.conf
+include ~/.dotfiles/i3/vol_br_ctl.conf
+
+
+workspace 1 output DP-2
+workspace 2 output DP-2
+workspace 3 output DP-2
+workspace 4 output DP-2
+workspace 5 output DP-2
+workspace 6 output DP-3
+
+bar {
+    font pango:Monospace, JetBrainsMonoNerdFont 12
+    position bottom
+    height 30
+    output DP-2
+    status_command i3status-rs ~/.dotfiles/i3-desktop/config.toml
+    colors {
+        separator #cdd6f4
+        background #1e1e2e
+        statusline #dddddd
+        focused_workspace #a6adc8 #cdd6f4 #1e1e2e
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace ##11111b #11111b #313244
+    }
+}
+

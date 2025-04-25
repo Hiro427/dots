@@ -1,0 +1,31 @@
+[
+  {
+    "context": "Editor && vim_mode == normal && vim_operator == none && !VimWaiting",
+    "bindings": {
+      "space space": "file_finder::Toggle",
+      "space t": [
+        "workspace::OpenTerminal",
+        {
+          "working_directory": "."
+        }
+      ],
+      "space a": "workspace::AddFolderToProject",
+      "space e": "workspace::ToggleLeftDock",
+      "space o": "workspace::OpenFiles",
+      "space s": "workspace::NewSearch",
+      "ctrl-shift-k": "pane::SplitLeft",
+      "ctrl-shift-j": "pane::SplitDown",
+      "space l": "pane::TogglePreviewTab",
+      "ctrl-e": "project_panel::ToggleFocus",
+      "space w": "terminal_panel::ToggleFocus",
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && vim_operator == none && !VimWaiting",
+    "bindings": {
+      "tab": "editor::MoveRight",
+      "shift-tab": "editor::Tab"
+    }
+  }
+]
+

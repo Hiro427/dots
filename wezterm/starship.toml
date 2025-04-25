@@ -1,0 +1,159 @@
+# version: 1.0.0
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+palette = "catppuccin_mocha"
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$lua\
+$custom\
+$golang\
+$python\
+$c\
+$docker_context\
+$rust
+$character\
+"""
+right_format = """
+$jobs
+$aws
+$docker_context
+$cmd_duration
+"""
+[fill]
+symbol = ' '
+
+[character]
+format = "$symbol "
+success_symbol = "[ 󱓟](bold green)"
+error_symbol = "[ 󱓟](bold red)"
+
+
+[directory]
+home_symbol = ""
+truncation_length = 4
+truncation_symbol=" ../"
+read_only = " "
+use_os_path_sep = true
+style = "lavender"
+format = '[$path]($style)[$read_only]($read_only_style)'
+repo_root_style = 'italic rosewater'
+repo_root_format = '[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)'
+
+[cmd_duration]
+format = "[◄ $duration ](bold italic maroon)"
+
+[jobs]
+format = "[$symbol$number]($style) "
+style = "text"
+symbol = "[󱃐](mauve italic)"
+
+[git_branch]
+format = "[ $branch$symbol(:$remote_branch)]($style)"
+symbol = "[ ](green)"
+style = "sky"
+truncation_symbol = "⋯"
+truncation_length = 11
+only_attached = true
+
+[git_status]
+style = "bold italic bright-blue"
+format = "([$staged$modified$untracked$renamed$deleted$conflicted$stashed]($style))"
+conflicted = "[ 󱔷 ](italic bright red)"
+untracked = "[ 󰾙 ](italic bright yellow)"
+stashed = "[ 󱇼 ](dimmed lavender)"
+modified = "[  ](dimmed peach)"
+staged = "[ 󱔲 [$count](bold white)│](italic bright-cyan)"
+deleted = "[ ](bright-red) "
+disabled = true
+
+[lua]
+format = "[$symbol$version]($style)"
+version_format = "${raw} "
+symbol = " "
+style = "bold bright-purple"
+
+[python]
+# format = "[$symbol$version]($style)"
+format = "[${symbol}${version}](yellow)[${virtualenv}](green)"
+symbol = " "
+version_format = "${raw} "
+
+[rust]
+format = "[$symbol$version]($style)"
+symbol = " "
+version_format = "${raw} "
+style = "bold peach"
+
+[package]
+format = "[$symbol]($style)"
+version_format = "${raw} "
+symbol = " "
+style = "dimmed yellow italic bold"
+
+[aws]
+disabled = false
+format = "[$symbol $profile $region]($style)"
+style = "bold peach"
+symbol = " "
+
+[c]
+symbol = " "
+format = "[$symbol$version]($style)"
+version_format = "${raw} "
+style = "blue"
+
+[docker_context]
+symbol = " "
+format = "[$symbol$context](sapphire)"
+
+[golang]
+symbol = " "
+format = "[$symbol$version](sky)"
+version_format = "${raw} "
+
+[java]
+symbol = "󰬷 "
+format = "[$symbol$version]($style)"
+version_format = "${raw} "
+style = "red"
+
+[custom.typescript]
+# command = "tsc --version | cut -d ' ' -f2"
+command = "echo 5.8.2"
+detect_extensions = ['ts']
+format = "[ $output](blue) "  # Symbol + version in blue
+
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+

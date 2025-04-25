@@ -1,0 +1,15 @@
+meta {
+  name: test box score
+  type: http
+  seq: 5
+}
+
+get {
+  url: https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401766460
+  body: none
+  auth: inherit
+}
+
+params:query {
+  event: 401766460
+}
