@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 case $(hostname) in 
-    fedora)
+    nixos)
         MOUSE_ID=$(xinput list | \
             grep "Logitech" | \
             grep "pointer" | \
