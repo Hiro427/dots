@@ -1,0 +1,87 @@
+
+- name: neovim
+  bindings:
+    - name: Mini (Files)
+      key: space + e 
+    - name: Enable Dim 
+      key: space + de 
+    - name: Disable Dim 
+      key: space + dd 
+    - name: Terminal 
+      key: space + t 
+    - name: LazyGit 
+      key: space + gg
+  children:
+    - name: telescope
+      bindings:
+        - name: Search Lines
+          key: space + l 
+        - name: Search File (current-directory)
+          key: space + fd
+        - name: Search Keymaps 
+          key: space + fk 
+        - name: Live Grep 
+          key: space + gs  
+        - name: Search Commands 
+          key: space + fc
+    - name: harpoon 
+      bindings: 
+        - name: Harpoon (Prev)
+          key: Tab + j 
+        - name: Harpoon (Next)
+          key: Tab + k 
+        - name: Harpoon (Add)
+          key: Tab + l 
+        - name: Harpoon (Menu) 
+          key: Tab + h 
+        - name: Harpoon (Telescope)
+          key: Tab + t
+    - name: completions 
+      bindings:
+        - name: Select Previous 
+          key: Shift + Tab 
+        - name: Select Next 
+          key: Tab 
+        - name: Scroll Docs (Down)
+          key: Ctrl + b
+        - name: Scroll Docs (Up)
+          key: Ctrl + f
+        - name: Abort 
+          key: Ctrl + e 
+        - name: Confirm 
+          key: Enter
+    - name: surround 
+      bindings: 
+        - name: Add
+          key: sa 
+        - name: Delete 
+          key: sd 
+        - name: Replace 
+          key: sr 
+        - name: Find 
+          key: sf/sF
+        - name: Highlight 
+          key: sh
+
+- name: Tmux
+  bindings: 
+  - name: Split Vertical 
+    key: Ctrl+Shift+k
+  - name: Split Horizontal
+    key: Ctrl+Shift+j
+  - name: Navigate Panes(U/D/L/R)
+    key: Ctrl + k/j/h/l
+  - name: Resize Panes
+    key: Alt + k/j/h/l
+- name: Ghostty
+  bindings: 
+  - name: Split Vertical 
+    key: Ctrl+Shift+k
+  - name: Split Horizontal
+    key: Ctrl+Shift+j
+  - name: Navigate Panes(U/D/L/R)
+    key: Ctrl + k/j/h/l
+  - name: Resize Panes
+    key: Ctrl+Alt + k/j/h/l
+
+
