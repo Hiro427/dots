@@ -49,7 +49,7 @@ format = " $icon $percentage "
 
 [[block]]
 block = "net"
-format = "{󰖩 $ssid |󰈀 $ssid}"
+format = "{󰖩 $ssid | 󰈀 wired}"
 inactive_format = "󰖪 "
 interval = 30
 

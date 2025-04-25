@@ -1,1 +1,1 @@
-/home/jacobrambarran/dotfiles/assets/catppuccin-wallpapers/os/nix-black-4k.png
+/home/jacobrambarran/.dotfiles/assets/catppuccin-wallpapers/os/nix-black-4k.png
