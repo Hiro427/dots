@@ -22,6 +22,8 @@ alias tsv="tmux split-pane -v"
 alias tsh="tmux split-pane -h"
 alias cur_date='date +"%m-%d-%Y-%H-%M-%S"'
 alias search="is-fast"
+# alias nvidia-offload='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia'
+alias nvidia-offload='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia "$@"'
 # alias wezterm='flatpak run org.wezfurlong.wezterm'
 
 eval "$(zoxide init zsh --cmd 'cd')"
