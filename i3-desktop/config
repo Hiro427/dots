@@ -18,7 +18,7 @@ bar {
     position bottom
     height 30
     output DP-2
-    status_command i3status-rs ~/.dotfiles/i3-laptop/config.toml
+    status_command i3status-rs ~/.dotfiles/i3-desktop/config.toml
     colors {
         separator #cdd6f4
         background #1e1e2e
