@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 ln -s ~/.dotfiles/rofi ~/.config/rofi
-ln -s ~/.dotfiles/yazi ~/.config/yazi
 ln -s ~/.dotfiles/picom ~/.config/picom
 ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/dunst ~/.config/dunst
