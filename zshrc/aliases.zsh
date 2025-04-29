@@ -20,7 +20,7 @@ alias nvidia-offload='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvid
 eval "$(zoxide init zsh --cmd 'cd')"
 # eval $(thefuck --alias)
 
-# bindkey '^I' autosuggest-accept
+bindkey '^I' autosuggest-accept
 bindkey -s '^f' 'y\n'
 bindkey -s '^x' 'tsm\n'
 bindkey -s '^g' 'hist\n'
