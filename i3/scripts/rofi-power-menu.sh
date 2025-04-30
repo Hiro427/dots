@@ -10,7 +10,7 @@ chosen=$(echo -e "$options" | rofi -dmenu -i -p "Power Menu:" -theme-str '#windo
 case "$chosen" in
     " Lock")
         # Replace with your lock screen command
-        i3lock -i ~/wallpapers/cold-alley.png
+        i3lock -c 000000
         ;;
     " Logout")
         # Replace with the appropriate logout command for your desktop environment
@@ -24,7 +24,7 @@ case "$chosen" in
         ;;
     " Suspend")
         # light-locker-command -l && systemctl suspend 
-        i3lock -i ~/wallpapers/cold-alley.png && systemctl suspend
+        i3lock -c 000000 && systemctl suspend
         ;;
     *)
         # Exit if no option is chosen
