@@ -9,27 +9,15 @@ icons = "awesome4"
 # [[block]]
 # block = "custom"
 # hide_when_empty = true
-# interval = 30
-# command = "sticker -ticker all"
-# format = "{$text.str(max_w:17, rot_interval:0.4)}"
-# # persistence = true
-# [[block.click]]
-# button = "left"
-# action = "cycle"
+# interval = 600
+# # command = "curl -k -s 'https://api.quotable.io/random' | jq -r '.content + ' — ' + .author'"
+# command = "echo $(curl -k -s https://api.quotable.io/random | jq -r '.content + .author')"
+# format = "{$text.str(max_w:30, rot_interval:0.4)}"
 # [[block.click]]
 # button = "right"
 # update = true
 #
 
-# [[block]]
-# block = "custom"
-# interval = 60 
-# cycle = ["echo  NBA", "scores nba --game gs", "scores nba --game ny", "scores nba --game den"]
-# format = "{$text.str(max_w:20, rot_interval:0.5)}"
-# [[block.click]] button = "left" action = "cycle"
-# [[block.click]]
-# button = "right"
-# update = true
 #
 [[block]]
 block = "cpu"
@@ -69,8 +57,8 @@ update = true
 
 [[block]]
 block = "music"
-format_alt = "{$icon $combo.str(max_w:15, rot_interval:0.4) $prev $play $next |}"
-format = "{ $icon  $prev $play $next |}"
+format = "{$icon $combo.str(max_w:15, rot_interval:0.4) $prev $play $next |}"
+format_alt = "{ $icon  $prev $play $next |}"
 player = "spotify"
 # interface_name_exclude = [".*vlc.*"]
 # seek_step_secs = 10
@@ -99,18 +87,8 @@ interval = 30
 
 [[block]]
 block = "custom"
-cycle = ["mailcli -mail all", "sh ~/.dotfiles/i3/scripts/animanga.sh"]
-interval = "once"
-[[block.click]]
-button = "right"
-update = true
-
-
-[[block]]
-block = "custom"
 interval = 3600 
-# command = "go run ~/coding/projects/weather_bar/weather.go -loc NY"
-command = "weather"
+command = "echo 󰖕 $(curl -s 'wttr.in/?format=1' | awk -F'+' '{print $2}')"
 # [[block.click]]
 # button = "left"
 # action = "cycle"
