@@ -1,0 +1,5 @@
+/home/jacobrambarran/coding/projects/wip
+/home/jacobrambarran/.dotfiles
+/home/jacobrambarran/mynix/Nix
+/home/jacobrambarran/coding/projects/creader
+/home/jacobrambarran/coding/projects/mxdownloader
