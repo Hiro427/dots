@@ -22,7 +22,7 @@ eval "$(zoxide init zsh --cmd 'cd')"
 
 bindkey '^I' autosuggest-accept
 bindkey -s '^f' 'y\n'
-bindkey -s '^x' 'tsm\n'
+# bindkey -s '^x' 'tsm\n'
 bindkey -s '^g' 'hist\n'
 bindkey -s '^Z' 'fg\n' 
 
