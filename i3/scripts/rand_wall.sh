@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-WALLPAPER_DIR=("$HOME/Pictures/gowall" "$HOME/wallpapers" "$HOME/.dotfiles/assets/catppuccin-wallpapers/")
+WALLPAPER_DIR=("$HOME/Pictures/gowall" "$HOME/wallpapers")
 SET_IMAGE="gsettings set org.gnome.desktop.background picture-uri-dark file:///"
 
 
@@ -10,7 +10,7 @@ main() {
 
     while true; do 
 
-        image="$(find "${WALLPAPER_DIR[@]}" -maxdepth 3 -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" -o -name "*.webp" | fzf --height 40 --preview 'chafa --size=40x30 {}')"
+        image="$(find "${WALLPAPER_DIR[@]}" -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" -o -name "*.webp" | fzf --height 40 --preview 'chafa --size=40x30 {}')"
         chafa "$image"
 
         tput civis
@@ -37,6 +37,7 @@ main() {
                 case $XDG_CURRENT_DESKTOP in 
                     GNOME)
                         eval "$SET_IMAGE${image}"
+                        echo "$image" > ~/.dotfiles/i3/cur_wall.txt
                         clear
                         tput cnorm
                         exit
