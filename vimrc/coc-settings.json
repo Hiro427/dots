@@ -1,0 +1,36 @@
+{
+  "inlayHint.enable": false,
+  "inlayHint.display": false,
+  "inlayHint.enableParameter": false,
+  "explorer.width": 30,
+  "explorer.file.showHiddenFIles": true,
+  "explorer.icon.enableVimDevicons": true,
+  "explorer.icon.enableNerdfont": true,
+  "diagnostic.enable": true,
+  "diagnostic.displaybyAle": false,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.refreshAfterSave": true,
+  "diagnostic.virtualTestCurrentLineOnly": false,
+  "diagnostic.refreshOnInsertMode": true, 
+  "coc.preferences.diagnostic.virtualText": true,
+  "diagnostic.autoRefresh": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.errorSign": "🔥",
+  "diagnostic.warningSign": "⚠️",
+  "diagnostic.infoSign": "ℹ️",
+  "diagnostic.floatEnable": true,
+  "prettier.enable":true,
+  "prettier.requireConfig": true,
+  "coc.preferences.formatOnSave": true,
+  "go.lintOnFly": true,
+  "go.lintOnSave": true
+  
+},
+
+
+[
+  "rust-analyzer.serverPath": "~/.cargo/bin/rust-analyzer",
+  "rust-analyzer.cargo.allFeatures": true,
+  "rust-analyzer.procMacro.enable": true,
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/18.1.3/clangd_18.1.3/bin/clangd"
+]

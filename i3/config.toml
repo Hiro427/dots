@@ -88,7 +88,7 @@ interval = 30
 [[block]]
 block = "custom"
 interval = 3600 
-command = "echo 󰖕 $(curl -s 'wttr.in/?format=1' | awk -F'+' '{print $2}')"
+command = "echo 󰖕 $(curl -s 'wttr.in/NYC?format=1' | awk -F'+' '{print $2}')"
 # [[block.click]]
 # button = "left"
 # action = "cycle"
