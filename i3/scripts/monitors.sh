@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
 
-HOSTNAME=$(hostname)
+PCMODEL=$(cat "/sys/class/dmi/id/product_name")
 
-
-if [[ "$HOSTNAME" == "nixos" ]]; then 
-    xrandr --output DP-3 --mode 1920x1080 --rotate normal \
-        --output DP-2 --primary --mode 1920x1080 --rotate normal --below DP-3 \
+if echo "XPS" | grep -n "$PCMODEL"; then
+  xrandr --auto
+else
+    xrandr --output DP-2 --primary --mode 1920x1080 --rotate normal --below DP-3 \
         --output eDP-1 --off
-fi 
+fi
+
+# if [[ "$HOSTNAME" == "nixos" ]]; then 
+#     xrandr --output DP-2 --primary --mode 1920x1080 --rotate normal \
+#         --output eDP-1 --off
+# fi 
 
