@@ -15,7 +15,7 @@ workspace 6 output DP-3
 
 bar {
     font pango:Monospace, JetBrainsMonoNerdFont 12
-    position top
+    position bottom
     height 25
     output DP-2
     status_command i3status-rs ~/.dotfiles/i3-desktop/config.toml
