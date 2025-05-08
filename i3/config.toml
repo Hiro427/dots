@@ -24,22 +24,22 @@ block = "cpu"
 info_cpu = 20
 warning_cpu = 50
 critical_cpu = 90
-interval = 10
+interval = 5
 format = "  $utilization"
 
 [[block]]
 block = "memory"
-interval = 10 
+interval = 5 
 format = " $icon $mem_used_percents.eng(w:2) "
 
 [[block]]
 block = "temperature"
-interval = 10
+interval = 5
 format = " $icon $average"
 
 [[block]] 
 block = "custom"
-interval = 10 
+interval = 5 
 command = '''echo "󰈐 $(sensors | grep fan1 | awk '{print $2; exit}')" '''
 
 # [[block]]
@@ -48,22 +48,18 @@ command = '''echo "󰈐 $(sensors | grep fan1 | awk '{print $2; exit}')" '''
 # format_alt = "{ $icon  $prev $play $next |}"
 # player = "spotify"
 
-[[block]]
-block = "custom"
-command = "~/.config/i3/scripts/cava-bar.sh"
-persistent = true
+# [[block]]
+# block = "custom"
+# command = "~/.config/i3/scripts/cava-bar.sh"
+# persistent = true
+
+
 
 [[block]]
-block = "uptime"
-interval = 600
-
-[[block]]
-block = "custom"
-interval = 3600 
-command = "echo 󰖕 $(curl -s 'wttr.in/NYC?format=1' | awk -F'+' '{print $2}')"
-[[block.click]]
-button = "right"
-update = true
+block = "net"
+format = "{󰖩 $ssid | 󰈀 }$speed_up $speed_down "
+format_alt = "{󰖩 $ssid | 󰈀 }"
+inactive_format = "󰖪 "
 
 
 [[block]]
@@ -78,24 +74,27 @@ format = " $icon $available "
 button = "right"
 update = true
 
-
-[[block]]
-block = "net"
-format = "{󰖩 $ssid | 󰈀 }$speed_up $speed_down "
-format_alt = "{󰖩 $ssid | 󰈀 }"
-inactive_format = "󰖪 "
-
-
 # [[block]]
 # block = "focused_window"
 # [block.format]
-# full = " $title.str(max_w:10, rot_interval:0.4) |"
+# full = " $title.str(max_w:15, rot_interval:0.4) |"
+
+[[block]]
+block = "uptime"
+interval = 600
+
+[[block]]
+block = "custom"
+interval = 3600 
+command = "echo 󰖕 $(curl -s 'wttr.in/NYC?format=1' | awk -F'+' '{print $2}')"
+[[block.click]]
+button = "right"
+update = true
 
 # [[block]]
 # block = "external_ip"
 # format = " $city $country_flag "
-
-
+ 
 [[block]]
 block = "time"
 interval = 60
