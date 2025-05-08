@@ -37,6 +37,12 @@ block = "temperature"
 interval = 5
 format = " $icon $average"
 
+[[block]]
+block = "nvidia_gpu"
+if_command = "[ \"$(cat /sys/class/dmi/id/product_name)\" = \"XPS 15 9510\" ]"
+interval = 10
+format = " 󰾆 $utilization $temperature $clocks "
+
 [[block]] 
 block = "custom"
 interval = 5 
@@ -50,6 +56,8 @@ command = '''echo "󰈐 $(sensors | grep fan1 | awk '{print $2; exit}')" '''
 
 # [[block]]
 # block = "custom"
+# # if_command = "[ \"$(playerctl metadata --format '{{playerName}}')\" != \"spotify\"]"
+# if_command = "pgrep -f spotify"
 # command = "~/.config/i3/scripts/cava-bar.sh"
 # persistent = true
 
@@ -57,8 +65,8 @@ command = '''echo "󰈐 $(sensors | grep fan1 | awk '{print $2; exit}')" '''
 
 [[block]]
 block = "net"
-format = "{󰖩 $ssid | 󰈀 }$speed_up $speed_down "
-format_alt = "{󰖩 $ssid | 󰈀 }"
+format_alt = "{󰖩 $ssid | 󰈀 }$speed_up $speed_down "
+format = "{󰖩 $ssid | 󰈀 }" 
 inactive_format = "󰖪 "
 
 
@@ -66,6 +74,7 @@ inactive_format = "󰖪 "
 block = "disk_space"
 info_type = "available"
 alert_unit = "GB"
+if_command = "[ \"$(cat /sys/class/dmi/id/product_name)\" = \"XPS 15 9510\" ]"
 alert = 100.0
 warning = 150.0
 format = " $icon $available "
@@ -79,9 +88,9 @@ update = true
 # [block.format]
 # full = " $title.str(max_w:15, rot_interval:0.4) |"
 
-[[block]]
-block = "uptime"
-interval = 600
+# [[block]]
+# block = "uptime"
+# interval = 60
 
 [[block]]
 block = "custom"
