@@ -25,18 +25,18 @@ ascii_max_range = 7
 " > $config_file
 
 # read stdout from cava
-# cava -p $config_file | while read -r line; do
-#     echo $line | sed $dict
-# done
-
-
 cava -p $config_file | while read -r line; do
-    # Check if the line contains any non-zero characters (or non-space if Cava outputs spaces)
-    if [[ "$(playerctl metadata)" == "No players found" ]]; then
-        # If it contains non-zero values, process and print
-        echo ""
-    else
-        # If it's all zeros (flat), print an empty string
-        echo "$line" | sed "$dict"
-    fi
+    echo $line | sed $dict
 done
+
+
+# cava -p $config_file | while read -r line; do
+#     # Check if the line contains any non-zero characters (or non-space if Cava outputs spaces)
+#     if [[ "$(playerctl metadata)" == "No players found" ]]; then
+#         # If it contains non-zero values, process and print
+#         echo ""
+#     else
+#         # If it's all zeros (flat), print an empty string
+#         echo "$line" | sed "$dict"
+#     fi
+# done
