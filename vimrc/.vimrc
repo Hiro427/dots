@@ -22,8 +22,7 @@ Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'kristijanhusak/vim-dadbod-completion' "Optional
 Plug 'itchyny/lightline.vim'
 Plug 'lilydjwg/colorizer'
-Plug 'liuchengxu/vim-clap'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'liuchengxu/vim-clap' Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-surround'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/vim-lsp'
@@ -82,11 +81,11 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1      " Highlights extra Go types
-let g:go_highlight_generate_tags = 1    " Highlights struct tags for generated code
-let g:go_highlight_variable_declarations = 1  " Highlights variable declarations
-let g:go_highlight_variable_assignments = 1    " Highlights variable assignments
-let g:go_highlight_function_calls = 1   " Highlights function calls distinctly
+let g:go_highlight_extra_types = 1    
+let g:go_highlight_generate_tags = 1   
+let g:go_highlight_variable_declarations = 1 
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_function_calls = 1   
 let g:tmux_navigator_no_mappings = 1
 
 "Functions
