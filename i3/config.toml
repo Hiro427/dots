@@ -42,17 +42,16 @@ block = "custom"
 interval = 10 
 command = '''echo "󰈐 $(sensors | grep fan1 | awk '{print $2; exit}')" '''
 
-[[block]]
-block = "music"
-format = "{$icon $combo.str(max_w:15, rot_interval:0.4) $prev $play $next |}"
-format_alt = "{ $icon  $prev $play $next |}"
-player = "spotify"
+# [[block]]
+# block = "music"
+# format = "{$icon $combo.str(max_w:15, rot_interval:0.4) $prev $play $next |}"
+# format_alt = "{ $icon  $prev $play $next |}"
+# player = "spotify"
 
 [[block]]
 block = "custom"
 command = "~/.config/i3/scripts/cava-bar.sh"
 persistent = true
-hide_when_empty = true
 
 [[block]]
 block = "uptime"
