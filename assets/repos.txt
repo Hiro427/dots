@@ -4,3 +4,4 @@
 /home/jacobrambarran/coding/projects/creader
 /home/jacobrambarran/coding/projects/mxdownloader
 /home/jacobrambarran/coding/homepage
+/home/jacobrambarran/coding/game-dev
