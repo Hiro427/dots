@@ -30,6 +30,20 @@ display-messages = true
 C-g = [":new", ":insert-output lazygit", ":buffer-close", ":redraw"]
 C-f = [":new", ":insert-output yazi", ":buffer-close", ":redraw"]
 C-r = ":open %sh run %val{filename}"
+a = ["append_mode", "collapse_selection"]
+"}" = ["extend_to_line_bounds", "goto_next_paragraph"]
+"{" = ["extend_to_line_bounds", "goto_prev_paragraph"]
+
+[keys.normal.space]
+space = ":open ~/coding/"
+y = ":clipboard-yank"
+
+[keys.select] 
+u = ["switch_to_lowercase", "collapse_selection", "normal_mode"]
+U = ["switch_to_uppercase", "collapse_selection", "normal_mode"]
+p = [":clipboard-paste-after"]
+P = [":clipboard-paste-before"]
+
 
 [editor.statusline]
 left = ["mode","spacer", "version-control"]
@@ -39,5 +53,4 @@ separator = "|"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
-
 

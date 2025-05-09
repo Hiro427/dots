@@ -17,7 +17,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export WEATHER_API="ab88effd9a8c4bee88531252240512"
 export MANGA_DL_DIR="$HOME/Downloads/Manga/"
 
-export NVIM_LISTEN_ADDRESS=/tmp/nvim.pipe
+# export NVIM_LISTEN_ADDRESS=/tmp/nvim.pipe
 
 
 eval "$(starship init zsh)"
