@@ -1,1 +1,16 @@
 theme "catppuccin-mocha"
+keybinds {
+
+	normal {
+
+		unbind "Ctrl n" "Ctrl o" "Ctrl h" "Ctrl g" "Ctrl s" "Ctrl t"
+
+		bind "Ctrl Alt l" { SwitchToMode "locked"; }
+		bind "Ctrl Alt t" { SwitchToMode "tab"; }
+		bind "Ctrl Alt m" { SwitchToMode "move"; }
+        bind "Ctrl Alt p" { SwitchToMode "pane"; }
+        bind "Ctrl Alt s" { SwitchToMode "session"; }
+        bind "Ctrl Alt r" { SwitchToMode "resize"; }
+
+	}
+}
