@@ -18,7 +18,7 @@ return {
 		lazy = false,
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local navic = require("nvim-navic")
+			-- local navic = require("nvim-navic")
 
 			local lspconfig = require("lspconfig")
 			lspconfig.ts_ls.setup({
@@ -26,99 +26,39 @@ return {
 			})
 			lspconfig.solargraph.setup({
 				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					if client.server_capabilities.documentSymbolProvider then
-						navic.attach(client, bufnr)
-					end
-				end,
 			})
 			lspconfig.rnix.setup({
 				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					if client.server_capabilities.documentSymbolProvider then
-						navic.attach(client, bufnr)
-					end
-				end,
 			})
 			lspconfig.html.setup({
 				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					if client.server_capabilities.documentSymbolProvider then
-						navic.attach(client, bufnr)
-					end
-				end,
 			})
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					if client.server_capabilities.documentSymbolProvider then
-						navic.attach(client, bufnr)
-					end
-				end,
 			})
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					if client.server_capabilities.documentSymbolProvider then
-						navic.attach(client, bufnr)
-					end
-				end,
 			})
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					if client.server_capabilities.documentSymbolProvider then
-						navic.attach(client, bufnr)
-					end
-				end,
 			})
 			lspconfig.bashls.setup({
 				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					if client.server_capabilities.documentSymbolProvider then
-						navic.attach(client, bufnr)
-					end
-				end,
 			})
 			lspconfig.zls.setup({
 				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					if client.server_capabilities.documentSymbolProvider then
-						navic.attach(client, bufnr)
-					end
-				end,
 			})
 			lspconfig.clangd.setup({
 				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					if client.server_capabilities.documentSymbolProvider then
-						navic.attach(client, bufnr)
-					end
-				end,
 			})
 			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					if client.server_capabilities.documentSymbolProvider then
-						navic.attach(client, bufnr)
-					end
-				end,
 			})
 			lspconfig.spectral.setup({
 				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					if client.server_capabilities.documentSymbolProvider then
-						navic.attach(client, bufnr)
-					end
-				end,
 			})
 			lspconfig.sqlls.setup({
 				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					if client.server_capabilities.documentSymbolProvider then
-						navic.attach(client, bufnr)
-					end
-				end,
 			})
 			lspconfig.jdtls.setup({
 				capabilities = capabilities,
@@ -130,11 +70,6 @@ return {
 						-- Suppress progress updates
 					end,
 				},
-				on_attach = function(client, bufnr)
-					if client.server_capabilities.documentSymbolProvider then
-						navic.attach(client, bufnr)
-					end
-				end,
 			})
 			vim.keymap.set("n", "<leader>mh", vim.lsp.buf.hover, { desc = "Hover (Mason)" })
 			vim.keymap.set("n", "<leader>md", vim.lsp.buf.definition, { desc = "Go to Definition (Mason)" })
