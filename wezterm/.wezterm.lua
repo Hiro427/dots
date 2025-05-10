@@ -15,10 +15,23 @@ config.enable_kitty_graphics = true
 config.window_close_confirmation = "NeverPrompt"
 config.enable_wayland = false
 
+config.keys = {
+  {
+    key = 'v',
+    mods = 'ALT',
+    action = wezterm.action.ActivateCopyMode,
+  },
+  {
+        key = 'b',
+        mods = 'ALT',
+        action = wezterm.action.CopyMode 'MoveToStartOfLineContent',
+  },
+}
+
 if os.getenv("XDG_CURRENT_DESKTOP") == "i3" then
-	config.window_decorations = "RESIZE"
+  config.window_decorations = "RESIZE"
 else
-	config.window_decorations = "NONE"
+  config.window_decorations = "NONE"
 end
 
 config.cursor_blink_ease_in = "Constant"
