@@ -8,6 +8,7 @@ preview-completion-insert = true
 completion-trigger-len = 1
 auto-format = true
 end-of-line-diagnostics = "hint"
+text-width = 80
 
 [editor.cursor-shape]
 insert = "bar"
@@ -24,31 +25,47 @@ enable = true
 # display-inlay-hints = true
 display-messages = true
 
+[editor.statusline]
+left = [ "mode","separator", "file-base-name", "separator", "spacer", "workspace-diagnostics", ]
+center = []
+right = [ "position", "separator",  "spacer", "position-percentage", "spacer", "separator", 
+    "total-line-numbers", "separator",  "file-line-ending", "separator",  "file-type", ]
+separator = "|"
+mode.normal = "NORMAL"
+mode.select = "SELECT"
+mode.insert = "INSERT"
+
+[editor.whitespace.render]
+tab = "all"
+space = "all"
+
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+
 [keys.normal]
 C-g = [":new", ":insert-output lazygit", ":buffer-close", ":redraw"]
 C-f = [":new", ":insert-output yazi", ":buffer-close", ":redraw"]
-C-r = ":open %sh run %val{filename}"
 a = ["append_mode", "collapse_selection"]
 "}" = ["extend_to_line_bounds", "goto_next_paragraph"]
 "{" = ["extend_to_line_bounds", "goto_prev_paragraph"]
+A-r = [ ":config-reload", ]
+"C-r" = [ "redo", ]
+"A-j" = [ "ensure_selections_forward", "extend_to_line_bounds", "extend_char_right", "extend_char_left", "delete_selection",
+    "add_newline_below", "move_line_down", "replace_with_yanked", "goto_line_start", ]
+"A-k" = [ "ensure_selections_forward", "extend_to_line_bounds", "extend_char_right", "extend_char_left", "delete_selection",
+    "move_line_up", "add_newline_above", "move_line_up", "replace_with_yanked", "goto_line_start", ]
 
 [keys.normal.space]
-space = ":open ~/coding/"
 y = ":clipboard-yank"
+space = ":open ~/coding/"
 
 [keys.select] 
 u = ["switch_to_lowercase", "collapse_selection", "normal_mode"]
 U = ["switch_to_uppercase", "collapse_selection", "normal_mode"]
-p = [":clipboard-paste-after"]
-P = [":clipboard-paste-before"]
 
-
-[editor.statusline]
-left = ["mode","spacer", "version-control"]
-center = []
-right = ["file-base-name", "spinner", "spacer","workspace-diagnostics", "spacer", "position", "file-modification-indicator"]
-separator = "|"
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
 
