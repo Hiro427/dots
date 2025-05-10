@@ -5,11 +5,11 @@
 keybinds clear-defaults=true {
     normal {
         bind "Ctrl Alt l" { SwitchToMode "locked"; }
-        bind "Alt m" { SwitchToMode "move"; }
-        bind "Alt p" { SwitchToMode "pane"; }
-        bind "Alt r" { SwitchToMode "resize"; }
-        bind "Alt s" { SwitchToMode "session"; }
-        bind "Alt t" { SwitchToMode "tab"; }
+        bind "Ctrl Alt m" { SwitchToMode "move"; }
+        bind "Ctrl Alt p" { SwitchToMode "pane"; }
+        bind "Ctrl Alt r" { SwitchToMode "resize"; }
+        bind "Ctrl Alt s" { SwitchToMode "session"; }
+        bind "Ctrl Alt t" { SwitchToMode "tab"; }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "normal"; }
