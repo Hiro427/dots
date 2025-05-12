@@ -17,6 +17,8 @@ alias cur_date='date +"%m-%d-%Y-%H-%M-%S"'
 alias search="is-fast"
 alias nvidia-offload='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia "$@"'
 
+bindkey -e
+
 eval "$(zoxide init zsh --cmd 'cd')"
 # eval $(thefuck --alias)
 

@@ -25,3 +25,14 @@ pyflakes = {enabled = false}
 pylint = {enabled = false}
 yapf = {enabled = false}
 ruff = {enabled = false}
+
+[[language]]
+name = "rust"
+auto-format = true
+roots = [
+  "Cargo.toml",
+  "Cargo.lock"
+]
+language-servers = ["rust-analyzer"]
+[language-server.rust-analyzer]
+command = "/run/current-system/sw/bin/rust-analyzer"

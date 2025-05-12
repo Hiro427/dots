@@ -2,6 +2,7 @@ theme = "catppuccin_mocha"
 
 [editor]
 line-number = "relative"
+color-modes = true
 auto-save = true
 true-color = true
 preview-completion-insert = true

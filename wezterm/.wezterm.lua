@@ -22,9 +22,9 @@ config.keys = {
     action = wezterm.action.ActivateCopyMode,
   },
   {
-        key = 'b',
-        mods = 'ALT',
-        action = wezterm.action.CopyMode 'MoveToStartOfLineContent',
+    key = 'b',
+    mods = 'ALT',
+    action = wezterm.action.CopyMode 'MoveToStartOfLineContent',
   },
 }
 
