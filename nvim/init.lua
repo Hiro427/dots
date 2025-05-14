@@ -1,3 +1,2 @@
 require("config.lazy")
-require("options")
-require("config.themes")
+require("config.options")
