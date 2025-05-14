@@ -17,12 +17,6 @@ return {
     lazy = true,
   },
   {
-    "lewis6991/gitsigns.nvim",
-    config = function()
-      require("gitsigns").setup({})
-    end,
-  },
-  {
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup()

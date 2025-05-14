@@ -6,13 +6,16 @@ return {
       require("mini.files").setup({
         windows = {
           preview = true, -- Show preview window
-          width_focus = 40,
-          width_nofocus = 30,
+          width_focus = 30,
+          width_nofocus = 20,
+          width_preview = 60,
         },
       })
       require("mini.pairs").setup({})
       require("mini.notify").setup({})
-      require("mini.cursorword").setup({
+      require("mini.cursorword").setup({})
+      require("mini.diff").setup({})
+      require("mini.move").setup({
         mappings = {
           -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
           left = '<S-h>',
@@ -27,7 +30,6 @@ return {
           line_up = '<S-k>',
         },
       })
-      require("mini.move").setup({})
       require("mini.ai").setup({})
       require("mini.icons").setup({})
       require("mini.statusline").setup({})
