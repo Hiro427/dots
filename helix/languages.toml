@@ -34,5 +34,7 @@ roots = [
   "Cargo.lock"
 ]
 language-servers = ["rust-analyzer"]
+
 [language-server.rust-analyzer]
 command = "/run/current-system/sw/bin/rust-analyzer"
+
