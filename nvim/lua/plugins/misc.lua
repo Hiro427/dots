@@ -9,9 +9,6 @@ return {
     end,
   },
   {
-    "tpope/vim-surround",
-  },
-  {
     "folke/noice.nvim",
     event = "VeryLazy",
     dependencies = {
