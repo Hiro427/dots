@@ -2,7 +2,14 @@ return {
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    vim.keymap.set("n", "<leader>xt", ":TodoTrouble<CR>", { desc = "View Todos (Trouble)" }),
+    config = function()
+      require("todo-comments").setup({
+        vim.keymap.set("n", "<leader>xt", ":TodoTrouble<CR>", { desc = "View Todos (Trouble)" }),
+      })
+    end,
+  },
+  {
+    "tpope/vim-surround",
   },
   {
     "folke/noice.nvim",
