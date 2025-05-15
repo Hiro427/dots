@@ -18,22 +18,12 @@ alias search="is-fast"
 alias nvidia-offload='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia "$@"'
 
 bindkey -e
-
 eval "$(zoxide init zsh --cmd 'cd')"
 # eval $(thefuck --alias)
-
 bindkey '^I' autosuggest-accept
 bindkey -s '^f' 'y\n'
 # bindkey -s '^x' 'tsm\n'
 bindkey -s '^g' 'hist\n'
 bindkey -s '^Z' 'fg\n' 
-
-if [[ $(hostname) == "nixos" ]]; then
-    alias ff="fastfetch --logo ~/.dotfiles/assets/icons/gojo-ascii.txt --logo-padding-left 4 --logo-padding-right 4"
-elif [[ $(hostname) == "debian" ]]; then
-    alias ff="fastfetch && aniquote random"
-else
-    alias ff="fastfetch"
-fi
 
 

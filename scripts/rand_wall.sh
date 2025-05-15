@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 
-WALLPAPER_DIR=("$HOME/Pictures/gowall" "$HOME/wallpapers" "$HOME/.dotfiles/assets/catppuccin-wallpapers/")
+WALLPAPER_DIR=("$HOME/Pictures/gowall" "$HOME/wallpapers")
 SET_IMAGE="gsettings set org.gnome.desktop.background picture-uri-dark file:///"
 
 

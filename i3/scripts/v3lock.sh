@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# overlay=$HOME/.dotfiles/i3/assets/kakashi.png
 
 sleep 1
 scrot /tmp/currentworkspace.png

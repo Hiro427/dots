@@ -5,7 +5,6 @@ source <(fzf --zsh)
 
 export BAT_THEME="Catppuccin Mocha"
 
-export UPDATE_LOG=$HOME/.dotfiles/logs/fedora_log.txt
 
 export EDITOR="nvim" #for yazi
 
